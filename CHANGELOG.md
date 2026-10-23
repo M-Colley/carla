@@ -135,6 +135,7 @@
 * Fixed non-finite vector angles and normalization at extreme finite magnitudes, large-angle normalization losing its remainder, and quaternion-to-Euler conversion losing heading at pitch poles.
 * Fixed Lambert projections with equal standard parallels and zero-curvature arc distance queries producing non-finite results.
 * Fixed mesh OBJ exporters reading past the final material and concatenated mesh materials starting before their connecting triangles.
+* Fixed client data races when consuming map changes and publishing pending Traffic Manager errors from background threads.
 * Fixed clients failing `get_world()` against a packaged server: `get_required_files` leaked pak-relative paths that escaped the client cache. The server now sends content-relative names and refuses paths that resolve outside the content folder — previously an arbitrary-file-read vector.
 * Fixed uninitialized type-dependent data in empty actor snapshots, which could return invalid vehicle controls and telemetry before the actor's first streamed update.
 * Fixed `from carla.command import ...` by registering the `command` submodule in `sys.modules`.
