@@ -186,6 +186,7 @@
 * Fixed Windows setup reusing an engine checkout without passing its path to CMake, skipping a missing content checkout after an interrupted download, and parsing Python installation paths containing spaces.
 * Fixed Python API wheel builds from source and build directories containing spaces, and rejected the unsupported setuptools-only backend instead of producing a wheel without the native client.
 * Fixed Python API wheel builds from source and build directories containing spaces, rejected the unsupported setuptools-only backend instead of producing a wheel without the native client, and fixed client-only configuration requesting Boost.Python while disabling it.
+* Fixed native RPC tests exhausting their game-thread polling loop before the client runs, and a streaming test trying to connect to a wildcard address on Windows. RPC test failures now finish with a bounded client timeout and report worker exceptions.
 * Fixed the Windows build: the setup installs the MSVC 14.38 toolset the engine fork needs, MSVC builds use `/W4`, and two compile and link errors in LibCarla.
 * Fixed the CMake toolchain picking the oldest clang sysroot when an upgraded engine keeps several side by side.
 
