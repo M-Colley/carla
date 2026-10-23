@@ -1,5 +1,8 @@
 ## LATEST Changes
 
+Client validation snapshot: integrates the source and regression tests from
+PRs #9991 through #9999; see `VALIDATION_CLIENT.md` for identities and scope.
+
 ### New features
 
 #### Simulator
