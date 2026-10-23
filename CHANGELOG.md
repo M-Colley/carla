@@ -145,6 +145,7 @@
 * Corrected an invalid compare-exchange failure memory order in the client's atomic shared-state pointer.
 * Fixed an RPC server deadlock on shutdown, an overly strict `Vector3D` assert, OpenDRIVE lane width for centre lanes, busy-wait `yield()` calls and strict `RELEASE_ASSERT`s in road `Map`.
 * Fixed `VehiclePhysicsControl.forward_gear_ratios` and `reverse_gear_ratios` raising conversion errors when reading or assigning ordinary Python lists, including constructor arguments.
+* Fixed `RecurrentSharedFuture::SetException` rejecting mutable and const lvalue exception objects during template instantiation.
 
 #### Simulation and content
 
