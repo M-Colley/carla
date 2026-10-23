@@ -136,6 +136,12 @@ __Windows setup__ tests run the batch scripts with recording executables instead
 python -m unittest discover -s Util/SetupUtils/tests -v
 ```
 
+__Streaming listener state__ tests compile the production streaming classes without
+Unreal Engine or a running simulator. They cover subscriber churn and concurrent
+ROS visibility changes. See
+[`Util/Tests/StreamListeners/README.md`](https://github.com/carla-simulator/carla/blob/ue58-dev/Util/Tests/StreamListeners/README.md)
+for dependencies, sanitizer runs and the optional getter benchmark.
+
 __Lens validation__ checks the `sensor.camera.rt_lens` lens models. The math tests run offline; the capture tests skip unless you point them at a server. The full procedure is in `PythonAPI/test/lens_validation/README.md`.
 
 ```sh
