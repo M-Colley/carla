@@ -9,3 +9,6 @@ When building this package from a CARLA source checkout, use the CMake targets
 extension with the PEP 517 `scikit-build-core` backend. Keep `ENABLE_PEP517=ON`
 (the default); the setuptools-only `ENABLE_PEP517=OFF` path is unsupported and
 is rejected during configuration.
+
+JPEG-enabled builds use libjpeg-turbo. This software is based in part on the
+work of the Independent JPEG Group.
