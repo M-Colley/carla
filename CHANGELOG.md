@@ -217,6 +217,7 @@
 * Fixed skill map aliases for layered and nested towns, Traffic Manager `all` actor lookup before its first snapshot, world-settings changes blocked on a stalled synchronous clock, and replay startup on platforms without `/proc`.
 * Fixed `config.py --fps 0` and `--delta-seconds 0` raising an exception instead of selecting a variable frame rate (#4745).
 * Added native RPC shutdown regressions for an unpumped synchronous handler and bounded server stop (#9609).
+* Fixed manual-control DVS image recording raising AttributeError by saving the rendered event preview as frame-numbered PNG images (#7018).
 * Fixed `PythonAPI/examples/manual_control.py` raising `NameError: name 'sys' is not defined` instead of their error message when the server cannot send the OpenDRIVE file or the map has no spawn points.
 * Fixed `PythonAPI/examples/no_rendering_mode.py` ignoring `--show-triggers`, `--show-connections` and `--show-spawn-points` when a cached map image existed; the flags are part of the cache name now.
 * Fixed the spawn check in `test_collision_determinism.py`, which raised `AttributeError` instead of reporting the failure, and `Sensor.get_current_detection_points` in the LiDAR smoke tests.
