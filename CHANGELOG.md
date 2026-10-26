@@ -39,6 +39,9 @@
 - Correct agent route-corridor perimeter ordering and project complete actor bounding-box footprints for obstacle checks.
 - Select blocking actors by the clearance used for behavior decisions, preserving returned center distances.
 - Keep obstacle detection in sync with runtime lane-offset changes and retain steering during behavior-agent emergency braking.
+- Finish lane exploration cleanly when a valid terminal lane has no successor.
+- Accept valid empty DVS event packets and report a failed smoke test when fewer than the requested packets arrive.
+- Measure the weather cycle's documented warmup in real seconds, independently of simulated time and cycle speed.
 
 ### New features
 
