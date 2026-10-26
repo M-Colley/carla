@@ -17,6 +17,7 @@
 - Fixed actor attribute numeric validation to reject invalid text, overflow and out-of-range RGB channels, using locale-independent decimal parsing.
 - Fixed rejected actor attribute updates to retain the previous valid value.
 - Fixed OBJ append text I/O to preserve UTF-8 object names and material names independently of the host locale, while retaining legacy name bytes.
+- Fixed concurrent cache downloads to different files in a shared new directory so another writer creating the directory is accepted.
 
 
 ### New features
