@@ -202,6 +202,7 @@
 * Fixed Python API wheel builds from source and build directories containing spaces, rejected the unsupported setuptools-only backend instead of producing a wheel without the native client, and fixed client-only configuration requesting Boost.Python while disabling it.
 * Fixed native RPC tests exhausting their game-thread polling loop before the client runs, and a streaming test trying to connect to a wildcard address on Windows. RPC test failures now finish with a bounded client timeout and report worker exceptions.
 * Fixed native RPC tests exhausting their game-thread polling loop before the client runs, and a streaming test trying to connect to a wildcard address on Windows. RPC test failures now finish with a bounded client timeout and report worker exceptions. The Python client version test now compares installed package metadata instead of requiring Git tags.
+* Fixed Windows setup losing the Visual Studio discovery helper's location after parsing Python path options.
 * Fixed Windows setup ignoring Visual Studio 2022 installations outside the default edition folders; shared `vswhere` discovery preserves custom paths with spaces and exclamation marks (#9878).
 * Fixed Linux setup treating an empty content parent as a complete checkout; it now verifies the content repository and preserves invalid or partial data (#7693, #7358).
 * Fixed the Windows build: the setup installs the MSVC 14.38 toolset the engine fork needs, MSVC builds use `/W4`, and two compile and link errors in LibCarla.

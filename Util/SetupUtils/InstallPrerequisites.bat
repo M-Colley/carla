@@ -1,4 +1,6 @@
 @echo off
+setlocal DisableDelayedExpansion
+set "carla_prerequisites_script_dir=%~dp0"
 setlocal EnableDelayedExpansion
 
 set ninja_version=1.12.1
@@ -62,7 +64,7 @@ rem -- MAIN --
 
 rem -- INSTALL VISUAL STUDIO IF NOT FOUND --
 setlocal DisableDelayedExpansion
-call "%~dp0FindVisualStudio.bat"
+call "%carla_prerequisites_script_dir%FindVisualStudio.bat"
 if not errorlevel 1 (
     echo Found Visual Studio 2022.
     goto end_vs_install
