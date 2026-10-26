@@ -33,6 +33,9 @@
 - Preserve mesh data when adding its own vertices/UVs or appending or concatenating a mesh to itself.
 - Connect complete per-vertex texture coordinates and normals to exported OBJ faces.
 - Restore the documented PLY mesh export, including vertex attributes and triangle indices.
+- Camera interpolation now honors the requested server endpoint and keeps one FPS timeline across keypoints, including a single static pose.
+- Initialize sensor visualization callback state before starting asynchronous packet delivery.
+- Match synchronized example packets by world frame and sensor identity, and clean up allocated sensors after setup or settings restoration failures.
 
 ### New features
 
