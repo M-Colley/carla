@@ -163,6 +163,7 @@
 * Reset global planner intersection decisions between route queries to keep repeated planning independent.
 
 * Fixed global routes continuing past an elevated destination when fine waypoint sampling makes the distance threshold smaller than the height difference (#5579).
+* Fixed global route sampling stepping past short lanes, omitting short terminal edges, and truncating near-closed curved lanes.
 
 * Fixed clients failing `get_world()` against a packaged server: `get_required_files` leaked pak-relative paths that escaped the client cache. The server now sends content-relative names and refuses paths that resolve outside the content folder — previously an arbitrary-file-read vector.
 * Fixed `from carla.command import ...` by registering the `command` submodule in `sys.modules`.
