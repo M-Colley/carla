@@ -6,6 +6,7 @@
 * Fixed traffic-light debug boxes losing their local orientation when converted to world space.
 * Fixed the crosswalk visualization utility assuming every polygon has exactly four corners.
 * Fixed `next_until_lane_end` crashing when a driving lane terminates at an interior lane-section boundary, while preserving traversal through connected sections of the same road.
+* Fixed AgenticTools interpreter-command configuration, UTF-8 file interoperability on Windows, and malformed stdio request handling.
 
 ### New features
 
