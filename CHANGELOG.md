@@ -126,6 +126,8 @@
 * Fixed nearest-waypoint projection confusing lane-center distance with OpenDRIVE reference-line distance on offset and varying-width lanes.
 * Fixed changing lane widths, road offsets and elevations being incorrectly indexed as one straight lane segment.
 * Fixed asynchronous local Traffic Manager failures terminating the client process; worker errors now stop the worker and are forwarded through the episode's pending-exception channel.
+* Fixed C++ synchronous batch autopilot commands failing to register vehicles with the Traffic Manager. C++ and Python now share registration logic that preserves each command's Traffic Manager port and the final requested state per actor and port.
+* Fixed copying mutable RPC responses corrupting successful values and converting errors into successful boolean values.
 
 #### Sensors
 
