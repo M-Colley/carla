@@ -13,6 +13,8 @@
 * Fixed DVS and optical-flow previews/capture in the sensor reading skill, and clipped projected actor boxes at the camera plane and image bounds.
 * Fixed frame-to-video conversion dropping the final valid image; the incomplete-final-render workaround is now selected explicitly with `--skip-last-frame`.
 * Fixed the frame-to-video utility treating dataset metadata and subdirectories as image frames.
+- Fixed MsgPack variant conversion to report unsupported alternative tags instead of silently retaining a default or previous value.
+
 
 ### New features
 
