@@ -116,6 +116,7 @@
 * Fixed Linux navigation build scripts continuing after failed FBX conversion or crosswalk processing and hiding their failure status.
 * Fixed quaternion length, normalization and inverse losing representable results when the squared norm overflowed or underflowed single precision.
 * Fixed mesh simplification reading outside the index buffer when given an empty mesh.
+* Fixed Python weather presets sharing mutable objects between accesses; customizing a preset no longer changes its predefined values (#6649).
 
 #### Sensors
 
