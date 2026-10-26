@@ -10,6 +10,7 @@
 - Preserve metre-scale displacement when evaluating arcs with very small curvature.
 - Keep normalized OpenDRIVE parametric polynomials within their parameter interval at the geometry endpoint.
 - Compute nearest-point distances for spiral and polynomial road geometries instead of returning placeholder coordinates.
+* Fixed DVS and optical-flow previews/capture in the sensor reading skill, and clipped projected actor boxes at the camera plane and image bounds.
 
 ### New features
 
