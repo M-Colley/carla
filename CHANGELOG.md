@@ -139,6 +139,7 @@
 * Fixed `command.ShowDebugTelemetry` rejecting actor objects because its constructor expected an extra argument.
 * Fixed `command.SetVehicleLightState` converting a light mask to a boolean when given an actor object, losing all flags except the position light.
 * Fixed growing a `Buffer` reading beyond its old allocation or from null storage. Resizing now preserves the initialized prefix and leaves the buffer intact if the requested size is invalid or allocation fails.
+* Fixed requested-file downloads silently succeeding when the client cache could not be written. Failed writes and flushes now discard partial cache files and stop the request with an error.
 
 #### Sensors
 
