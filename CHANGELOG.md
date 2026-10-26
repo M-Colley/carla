@@ -155,6 +155,7 @@
 * Fixed `Waypoint.previous_until_lane_start()` overshooting into neighboring roads by measuring the remaining distance in the backward traversal direction (#5240).
 * Fixed wheel lateral slip graphs rejecting Python lists and corrected WheelPhysicsControl constructor keywords, positional order, types and defaults in the API reference (#9766).
 * Added `save_to_disk` to color-coded optical-flow images, so `get_color_coded_flow().save_to_disk(...)` uses the native image writer instead of raising `AttributeError` (#4610).
+* Kept the manual-control HUD usable with pygame's bundled font when system font discovery fails or finds no monospaced font (#9755).
 * Fixed clients failing `get_world()` against a packaged server: `get_required_files` leaked pak-relative paths that escaped the client cache. The server now sends content-relative names and refuses paths that resolve outside the content folder — previously an arbitrary-file-read vector.
 * Fixed `from carla.command import ...` by registering the `command` submodule in `sys.modules`.
 * Fixed `actor.destroy()` returning False right after `spawn_actor()`, because the client consulted an uninitialised snapshot state and refused to contact the server.
@@ -202,6 +203,8 @@
 * Fixed content-pack directory copies deleting their source when source and destination overlap.
 * Fixed content-pack archive member normalization hiding manifests on Windows.
 * Fixed invalid catalog contents leaving previously copied catalogs unregistered after a failed content-pack add.
+* Added `xdg-utils` to Ubuntu build prerequisites so Unreal Engine setup can register its file types with `xdg-mime` (#9457).
+* Reported the prerequisite installer exit code before Windows setup stops after a failed prerequisite step (#8697).
 * Fixed `carla-pack add` dropping existing OpenDRIVE, traffic-light phase, navigation and Traffic Manager sidecars when re-adding an in-pack map without sidecar flags (#9987).
 * Fixed Windows setup reusing an engine checkout without passing its path to CMake, skipping a missing content checkout after an interrupted download, and parsing Python installation paths containing spaces.
 * Fixed Python API wheel builds from source and build directories containing spaces, and rejected the unsupported setuptools-only backend instead of producing a wheel without the native client.
