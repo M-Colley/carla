@@ -554,7 +554,10 @@ def build_binary_for_navigation(package_name, dirname, maps):
                 subprocess.check_call(["build.bat", fbx_name_no_ext, os.path.splitext(xodr_filename)[0]], cwd=folder, shell=True)
             else:
                 subprocess.call(["chmod +x build.sh"], cwd=folder, shell=True)
-                subprocess.check_call(["bash", "build.sh", fbx_name_no_ext, os.path.splitext(xodr_filename)[0]], cwd=folder)
+                navigation_environment = os.environ.copy()
+                navigation_environment["PYTHON"] = sys.executable
+                subprocess.check_call(["bash", "build.sh", fbx_name_no_ext, os.path.splitext(xodr_filename)[0]],
+                                      cwd=folder, env=navigation_environment)
 
             # rename the xodr with the original name
             # os.rename(os.path.join(folder, "%s.xodr" % fbx_name_no_ext), os.path.join(folder, xodr_filename))

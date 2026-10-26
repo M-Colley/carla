@@ -112,6 +112,9 @@
 
 ### Bug fixes
 
+* Fixed Linux navigation generation invoking an unavailable `python` alias instead of the importing interpreter; standalone builds use `PYTHON` or Python 3.
+* Fixed Linux navigation build scripts continuing after failed FBX conversion or crosswalk processing and hiding their failure status.
+
 #### Sensors
 
 * Fixed data races in streaming listener checks and ROS 2 visibility changes while subscribers connect, disconnect, or streams are created and closed. Forced activity still resets on the last disconnect or session clear, and ROS visibility is retained.
