@@ -5,7 +5,7 @@ import sys
 
 def append_obj(destination, source, material=None):
     try:
-        with open(destination, "rt") as stream:
+        with open(destination, "rt", encoding="utf-8", errors="surrogateescape") as stream:
             offset = sum(line.startswith("v ") for line in stream)
     except FileNotFoundError:
         offset = 0
@@ -13,7 +13,7 @@ def append_obj(destination, source, material=None):
     # Prepare the entire addition before opening the destination for writing.
     output = []
     vertices = 0
-    with open(source, "rt") as stream:
+    with open(source, "rt", encoding="utf-8", errors="surrogateescape") as stream:
         for line in stream:
             if line.startswith("v "):
                 vertices += 1
@@ -29,7 +29,7 @@ def append_obj(destination, source, material=None):
                     raise ValueError("invalid OBJ face: %s" % line.rstrip())
                 indices = [index if index > 0 else vertices + index + 1 for index in indices]
                 output.append("f %s\n" % " ".join(str(offset + index) for index in indices))
-    with open(destination, "at") as stream:
+    with open(destination, "at", encoding="utf-8", errors="surrogateescape") as stream:
         stream.writelines(output)
 
 
