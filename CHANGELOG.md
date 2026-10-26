@@ -20,6 +20,7 @@
 - Fixed concurrent cache downloads to different files in a shared new directory so another writer creating the directory is accepted.
 
 - Correct waypoint lane-change permission directions for OpenDRIVE increase/decrease markings in both traffic rules.
+- Return all intervening lane markings when one simulation step crosses multiple same-section lane boundaries, including road entry and exit.
 - Report the crossed physical lane marking on left-hand-traffic roads.
 - Apply default OpenDRIVE signal validity to lanes travelling in the signal orientation, accounting for each road traffic rule.
 * Fixed Python and C++ navigation agents excluding exact angle-interval boundaries, including obstacles straight ahead.
