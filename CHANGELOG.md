@@ -11,6 +11,8 @@
 - Keep normalized OpenDRIVE parametric polynomials within their parameter interval at the geometry endpoint.
 - Compute nearest-point distances for spiral and polynomial road geometries instead of returning placeholder coordinates.
 * Fixed DVS and optical-flow previews/capture in the sensor reading skill, and clipped projected actor boxes at the camera plane and image bounds.
+* Fixed frame-to-video conversion dropping the final valid image; the incomplete-final-render workaround is now selected explicitly with `--skip-last-frame`.
+* Fixed the frame-to-video utility treating dataset metadata and subdirectories as image frames.
 
 ### New features
 
