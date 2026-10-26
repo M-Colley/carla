@@ -19,6 +19,7 @@
 - Fixed OBJ append text I/O to preserve UTF-8 object names and material names independently of the host locale, while retaining legacy name bytes.
 - Fixed concurrent cache downloads to different files in a shared new directory so another writer creating the directory is accepted.
 
+- Correct waypoint lane-change permission directions for OpenDRIVE increase/decrease markings in both traffic rules.
 
 ### New features
 
