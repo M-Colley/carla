@@ -119,6 +119,7 @@
 * Fixed Python weather presets sharing mutable objects between accesses; customizing a preset no longer changes its predefined values (#6649).
 * Fixed nearest-waypoint projection confusing lane-center distance with OpenDRIVE reference-line distance on offset and varying-width lanes.
 * Fixed changing lane widths, road offsets and elevations being incorrectly indexed as one straight lane segment.
+* Fixed asynchronous local Traffic Manager failures terminating the client process; worker errors now stop the worker and are forwarded through the episode's pending-exception channel.
 
 #### Sensors
 
