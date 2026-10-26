@@ -65,7 +65,7 @@ class TestSetupPrerequisiteErrors(unittest.TestCase):
         discovery = ROOT / 'Util' / 'SetupUtils' / 'FindVisualStudio.bat'
         if discovery.is_file():
             shutil.copyfile(discovery, prerequisites.with_name('FindVisualStudio.bat'))
-        (self.workspace / 'Unreal' / 'CarlaUnreal' / 'Content').mkdir(parents=True)
+        (self.workspace / 'Unreal' / 'CarlaUnreal' / 'Content' / 'Carla').mkdir(parents=True)
         self.engine = self.workspace / 'Engine'
         self.engine.mkdir()
         self.program_files = self.workspace / 'Programs'

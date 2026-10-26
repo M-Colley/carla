@@ -33,6 +33,10 @@ class RecordingCommand {
         }
         // Fail closed if a regression tries to download or run an installer.
         if (name == "curl" || name == "powershell") return 99;
+        if (name == "vswhere") {
+            Console.WriteLine(Environment.GetEnvironmentVariable("CARLA_TEST_VS_INSTALLATION"));
+            return 0;
+        }
         string failure = Environment.GetEnvironmentVariable(
             "CARLA_TEST_" + name.ToUpperInvariant() + "_EXIT");
         return failure == null ? 0 : Int32.Parse(failure);
@@ -75,6 +79,9 @@ class WindowsSetupTests(unittest.TestCase):
         prerequisites = self.workspace / "Util/SetupUtils/InstallPrerequisites.bat"
         prerequisites.parent.mkdir(parents=True)
         shutil.copyfile(ROOT / "Util/SetupUtils/InstallPrerequisites.bat", prerequisites)
+        discovery = ROOT / "Util/SetupUtils/FindVisualStudio.bat"
+        if discovery.is_file():
+            shutil.copyfile(discovery, prerequisites.with_name("FindVisualStudio.bat"))
         self.content = self.workspace / "Unreal/CarlaUnreal/Content"
         (self.content / "Carla").mkdir(parents=True)
         self.engine = self.directory / "UnrealEngine5_carla"
@@ -89,6 +96,10 @@ class WindowsSetupTests(unittest.TestCase):
         )
         activation.parent.mkdir(parents=True)
         activation.write_text("@echo off\nexit /b 0\n")
+        self.vs_installation = activation.parents[3]
+        query = self.program_files / "Microsoft Visual Studio/Installer/vswhere.exe"
+        query.parent.mkdir(parents=True)
+        shutil.copyfile(self.tools / "record.exe", query)
         self.log = self.directory / "commands.log"
         self.env = {
             key: value for key, value in os.environ.items()
@@ -99,6 +110,7 @@ class WindowsSetupTests(unittest.TestCase):
             "PATH": str(self.tools) + os.pathsep + str(Path(os.environ["WINDIR"]) / "System32"),
             "CARLA_UNREAL_ENGINE_PATH": str(self.engine),
             "CARLA_TEST_COMMAND_LOG": str(self.log),
+            "CARLA_TEST_VS_INSTALLATION": str(self.vs_installation),
         })
 
     def run_script(self, arguments="--skip-prerequisites", script="CarlaSetup.bat"):
@@ -106,6 +118,7 @@ class WindowsSetupTests(unittest.TestCase):
         runner = self.workspace / "run-test.bat"
         runner.write_text(
             '@echo off\nset "PROGRAMFILES=' + str(self.program_files)
+            + '"\nset "ProgramFiles(x86)=' + str(self.program_files)
             + '"\ncall ' + script + " " + arguments + "\n"
         )
         return subprocess.run(

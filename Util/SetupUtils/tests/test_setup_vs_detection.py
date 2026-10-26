@@ -78,7 +78,7 @@ class TestSetupVisualStudioDetection(unittest.TestCase):
         shutil.copyfile(ROOT / 'CarlaSetup.bat', self.workspace / 'CarlaSetup.bat')
         for filename in ['FindVisualStudio.bat', 'InstallPrerequisites.bat']:
             shutil.copyfile(ROOT / 'Util' / 'SetupUtils' / filename, self.utility / filename)
-        (self.workspace / 'Unreal' / 'CarlaUnreal' / 'Content').mkdir(parents=True)
+        (self.workspace / 'Unreal' / 'CarlaUnreal' / 'Content' / 'Carla').mkdir(parents=True)
         self.engine = self.directory / 'Engine'
         self.engine.mkdir()
         self.program_files = self.directory / 'Program Files'
