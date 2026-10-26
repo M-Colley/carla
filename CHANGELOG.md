@@ -130,6 +130,7 @@
 * Fixed copying mutable RPC responses corrupting successful values and converting errors into successful boolean values.
 * Fixed `command.ShowDebugTelemetry` rejecting actor objects because its constructor expected an extra argument.
 * Fixed `command.SetVehicleLightState` converting a light mask to a boolean when given an actor object, losing all flags except the position light.
+* Fixed growing a `Buffer` reading beyond its old allocation or from null storage. Resizing now preserves the initialized prefix and leaves the buffer intact if the requested size is invalid or allocation fails.
 
 #### Sensors
 
