@@ -24,6 +24,7 @@
 - Apply default OpenDRIVE signal validity to lanes travelling in the signal orientation, accounting for each road traffic rule.
 * Fixed Python and C++ navigation agents excluding exact angle-interval boundaries, including obstacles straight ahead.
 * Fixed constant-velocity obstacle responses commanding reverse motion or exceeding the configured forward target speed.
+* Fixed Python and C++ navigation agents rejecting targets inside a planar angle interval on graded roads because their projected forward direction was not normalized.
 
 ### New features
 
