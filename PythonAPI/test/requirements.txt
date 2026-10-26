@@ -1,4 +1,5 @@
 nose2
 networkx
 opencv-python
+requests
 shapely
