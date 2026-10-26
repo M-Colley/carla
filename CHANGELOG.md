@@ -14,6 +14,8 @@
 * Fixed frame-to-video conversion dropping the final valid image; the incomplete-final-render workaround is now selected explicitly with `--skip-last-frame`.
 * Fixed the frame-to-video utility treating dataset metadata and subdirectories as image frames.
 - Fixed MsgPack variant conversion to report unsupported alternative tags instead of silently retaining a default or previous value.
+- Fixed actor attribute numeric validation to reject invalid text, overflow and out-of-range RGB channels, using locale-independent decimal parsing.
+- Fixed rejected actor attribute updates to retain the previous valid value.
 
 
 ### New features
