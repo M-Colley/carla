@@ -29,6 +29,9 @@
 * Fixed constant-velocity agents ignoring the local planner's dynamic road speed limits when setting forced velocity.
 - Fixed light-manager destruction to unregister its own tick callback without removing an unrelated callback when registration counters differ.
 
+- Preserve mesh data when appending or concatenating a mesh to itself.
+- Connect complete per-vertex texture coordinates and normals to exported OBJ faces.
+- Restore the documented PLY mesh export, including vertex attributes and triangle indices.
 
 ### New features
 
