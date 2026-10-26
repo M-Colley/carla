@@ -128,6 +128,8 @@
 * Fixed asynchronous local Traffic Manager failures terminating the client process; worker errors now stop the worker and are forwarded through the episode's pending-exception channel.
 * Fixed C++ synchronous batch autopilot commands failing to register vehicles with the Traffic Manager. C++ and Python now share registration logic that preserves each command's Traffic Manager port and the final requested state per actor and port.
 * Fixed copying mutable RPC responses corrupting successful values and converting errors into successful boolean values.
+* Fixed `command.ShowDebugTelemetry` rejecting actor objects because its constructor expected an extra argument.
+* Fixed `command.SetVehicleLightState` converting a light mask to a boolean when given an actor object, losing all flags except the position light.
 
 #### Sensors
 
