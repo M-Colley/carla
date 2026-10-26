@@ -70,7 +70,7 @@ namespace detail {
       _listening_flags.fetch_and(~ROS, std::memory_order_relaxed);
     }
 
-    bool IsEnabledForROS() {
+    bool IsEnabledForROS() const {
       return (_listening_flags.load(std::memory_order_relaxed) & ROS) != 0u;
     }
 
