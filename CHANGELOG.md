@@ -114,6 +114,7 @@
 
 * Fixed Linux navigation generation invoking an unavailable `python` alias instead of the importing interpreter; standalone builds use `PYTHON` or Python 3.
 * Fixed Linux navigation build scripts continuing after failed FBX conversion or crosswalk processing and hiding their failure status.
+* Fixed quaternion length, normalization and inverse losing representable results when the squared norm overflowed or underflowed single precision.
 
 #### Sensors
 
