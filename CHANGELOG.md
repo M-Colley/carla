@@ -117,6 +117,8 @@
 * Fixed quaternion length, normalization and inverse losing representable results when the squared norm overflowed or underflowed single precision.
 * Fixed mesh simplification reading outside the index buffer when given an empty mesh.
 * Fixed Python weather presets sharing mutable objects between accesses; customizing a preset no longer changes its predefined values (#6649).
+* Fixed nearest-waypoint projection confusing lane-center distance with OpenDRIVE reference-line distance on offset and varying-width lanes.
+* Fixed polynomial lane-width and road-offset curvature being omitted from straight-lane indexing checks.
 
 #### Sensors
 
