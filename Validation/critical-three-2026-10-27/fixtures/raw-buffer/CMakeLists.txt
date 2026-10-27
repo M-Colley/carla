@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.28)
+project(RawBufferReview LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
+get_filename_component(default_source "${CMAKE_CURRENT_LIST_DIR}/../../../.." ABSOLUTE)
+set(CARLA_SOURCE_ROOT "${default_source}" CACHE PATH "CARLA source checkout")
+find_package(Python3 REQUIRED COMPONENTS Development.Embed)
+find_package(GTest REQUIRED)
+add_executable(raw_buffer_independent independent.cpp)
+target_include_directories(raw_buffer_independent PRIVATE
+  "${CARLA_SOURCE_ROOT}/PythonAPI/carla/src"
+  "${CARLA_SOURCE_ROOT}/PythonAPI/test/unit/native")
+target_link_libraries(raw_buffer_independent PRIVATE GTest::gtest_main Python3::Python)
+if(MSVC)
+  target_compile_options(raw_buffer_independent PRIVATE /W4)
+else()
+  target_compile_options(raw_buffer_independent PRIVATE -Wall -Wextra -Werror
+    -fsanitize=address,undefined -fno-omit-frame-pointer)
+  target_link_options(raw_buffer_independent PRIVATE -fsanitize=address,undefined)
+endif()

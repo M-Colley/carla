@@ -19,6 +19,8 @@ cmake -S PythonAPI/test/unit/native -B Build/RawDataBufferTests -DCMAKE_BUILD_TY
 cmake --build Build/RawDataBufferTests --config Release
 ctest --test-dir Build/RawDataBufferTests -C Release --output-on-failure
 
+The fixtures/raw-buffer project contains the two additional review cases. It includes the eight checked-in cases. CARLA_SOURCE_ROOT selects the source checkout. The Linux run used Clang 18 and ASAN_OPTIONS=detect_leaks=0 for the embedded CPython runtime. The fixtures/episode-worker directory contains the recorded forwarding case and its CMake target adapter. CMAKE_PROJECT_CARLA_INCLUDE selects that adapter when configuring the CARLA source tree.
+
 PythonAPI/test/unit/native/README.md documents the actual sensor binding fixture. Its builder uses a retained production Python backend with all 17 binding objects and compile_commands.json. The existing 11 tests exercise real serialized packet storage through private test factories. The installed production wheel has no private factory exports.
 
 ThreadSanitizer instrumentation used Clang 18, -fsanitize=thread, -fno-omit-frame-pointer, -g and -O1 across the fresh client library and dependencies. The worker cases passed 20 repetitions. The complete paired run produced the retained transport race report. The run used no ThreadSanitizer suppressions.
