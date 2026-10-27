@@ -1,0 +1,16 @@
+{
+  "mode": "normal",
+  "head": "aea8a108fb901686a6cee401a87ae567cbdcde3e",
+  "base": "5aff00dac2de205116f070542784e8d4777676f4",
+  "pr_heads": {
+    "9999": "e726ea76978618fd28c6db164fa9a7a4777224ff",
+    "10055": "7d110f5596a2390262cb581407e4c5eb612ca282"
+  },
+  "build": "$LINUX_PAIR/build-normal",
+  "archive": "$LINUX_PAIR/build-normal/LibCarla/libcarla-client.a",
+  "archive_sha256": "3d536402c2f0cbd76882e0820f86e926db1225e9e6ce9fec62f91334d0da0004",
+  "binary": "$LINUX_PAIR/build-normal/carla-episode-tests",
+  "binary_sha256": "462414422ea085a841832830d2d9fb96b5d85659a1c3d1c60db073eb2abbd1c8",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "scope": "Fresh complete client library built from exact current9999+10055 source union only; dependency source trees pinned/reused, no old CARLA object/archive reused. API ON only satisfies current-base unconditional BoostPython configure; no wheel/engine/server/complete suite claim."
+}

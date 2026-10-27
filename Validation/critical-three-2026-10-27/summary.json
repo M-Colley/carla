@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-27",
+  "upstream_base": "5aff00dac2de205116f070542784e8d4777676f4",
+  "pr_heads": {
+    "9999": "e726ea76978618fd28c6db164fa9a7a4777224ff",
+    "10055": "7d110f5596a2390262cb581407e4c5eb612ca282",
+    "10117": "80abe0132cc974faf0ca776ebf8fb1e88958eb7e"
+  },
+  "windows_combined_source": "72ad61f5f611e990e29c992ffe949aa97f53e846",
+  "windows_combined_tree": "a100b941c195e031970a5bb5d17ea4446c276c42",
+  "linux_pair_source": "aea8a108fb901686a6cee401a87ae567cbdcde3e",
+  "linux_sensor_source": "80abe0132cc974faf0ca776ebf8fb1e88958eb7e",
+  "windows": {
+    "production_build": "Fresh client and server libraries, all17 binding objects, wheel, native test executables",
+    "python_units": {
+      "tests": 82,
+      "passed": 82
+    },
+    "episode_regression_executions": 140,
+    "episode_regression_failures": 0,
+    "worker_regression_executions": 160,
+    "worker_regression_failures": 0,
+    "client_suite": {
+      "cases": 285,
+      "outcomes": {
+        "pass": 283,
+        "fail": 1,
+        "timeout": 1
+      },
+      "executions": 285
+    },
+    "server_suite": {
+      "cases": 167,
+      "outcomes": {
+        "pass": 163,
+        "fail": 4
+      },
+      "executions": 167
+    },
+    "sensor_binding_methods": 11,
+    "sensor_binding_repeated_executions": 220,
+    "sensor_binding_failures": 0,
+    "original_sensor_failed_subcases": 9,
+    "original_sensor_affected_methods": 5,
+    "sensor_capi_cases": 8,
+    "sensor_capi_debug_allocator_executions": 80,
+    "sensor_capi_failures": 0,
+    "no_exceptions_syntax": [
+      {
+        "source": "$TASK_ROOT/Carla-critical-three-windows/LibCarla/source/carla/trafficmanager/TrafficManagerLocal.cpp",
+        "exit": 0,
+        "seconds": 10.25,
+        "syntax_only": true
+      },
+      {
+        "source": "$TASK_ROOT/Carla-critical-three-windows/LibCarla/source/test/client/test_traffic_manager_worker.cpp",
+        "exit": 0,
+        "seconds": 1.235,
+        "syntax_only": true
+      }
+    ],
+    "no_exceptions_warning": "C4530 at unchanged TrafficManagerServer.h:46"
+  },
+  "linux": {
+    "sensor_production_build": "Fresh exact10117 client library128translation units and all17 binding translation units, wheel installed and imported",
+    "sensor_binding_methods": 11,
+    "sensor_binding_repeated_executions": 220,
+    "sensor_binding_failures": 0,
+    "sensor_capi_asan_ubsan_executions": 200,
+    "sensor_capi_asan_ubsan_failures": 0,
+    "normal_pair_executions": 320,
+    "normal_pair_failures": 0,
+    "worker_tsan_executions": 160,
+    "worker_tsan_failures": 0,
+    "full_pair_tsan": "FAIL: unsuppressed race in ServerSession::_is_writing after17 complete passing runs",
+    "tsan_suppressions": false
+  },
+  "failed_gates": {
+    "windows_native": [
+      {
+        "target": "client",
+        "test": "streaming.low_level_tcp_small_message",
+        "status": "fail",
+        "seconds": 2.0
+      },
+      {
+        "target": "client",
+        "test": "rpc.server_bind_sync_run_on_game_thread",
+        "status": "timeout",
+        "seconds": 45.032
+      },
+      {
+        "target": "server",
+        "test": "streaming.low_level_tcp_small_message",
+        "status": "fail",
+        "seconds": 2.016
+      },
+      {
+        "target": "server",
+        "test": "benchmark_streaming.image_200x200_mt",
+        "status": "fail",
+        "seconds": 11.109
+      },
+      {
+        "target": "server",
+        "test": "benchmark_streaming.image_800x600_mt",
+        "status": "fail",
+        "seconds": 11.11
+      },
+      {
+        "target": "server",
+        "test": "benchmark_streaming.image_1920x1080_mt",
+        "status": "fail",
+        "seconds": 11.109
+      }
+    ],
+    "linux_full_pair_tsan": "ServerSession.cpp:101 completion write races with caller read at:86; transport source matches upstream5aff",
+    "full_no_exceptions_build": "Unrun; MSVC syntax checks emitted an existing exception-handler warning",
+    "unreal_simulator_and_live_smoke": "Unrun",
+    "hosted_ci": "All3 reopened runs await maintainer approval. Earlier run10117 expired before approval. GitHub reports zero executed jobs."
+  },
+  "source_history": "PR source trees and commit histories remain unchanged. This report records revalidation of three existing proposals.",
+  "test_case_note": "Repeated case executions measure repetition of existing tests. They do not count distinct defects.",
+  "original_upstream_control": "Original5aff SensorData.cpp reproduces9 failing subcases across5of11methods against each platform's same fresh archive and remaining16 binding objects.",
+  "reproduction": "Existing tests, build targets and fixture instructions are in the three PR source trees. See reproduce.txt for host commands."
+}

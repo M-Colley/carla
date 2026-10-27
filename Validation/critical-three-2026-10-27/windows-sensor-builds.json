@@ -1,0 +1,91 @@
+{
+  "items": [
+    {
+      "variant": "baseline",
+      "combined_head": "72ad61f5f611e990e29c992ffe949aa97f53e846",
+      "pr10117_head": "80abe0132cc974faf0ca776ebf8fb1e88958eb7e",
+      "sensor_source_sha256": "2293c116b46daf34ce1a8a65c0b7a3f725643acefd710b67aa5c01fd4242454a",
+      "module": "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-baseline\\build\\carla.cp312-win_amd64.pyd",
+      "module_sha256": "799f3be5d5026189202967d5af97674a7404e5e268812a1b4f17aea102d7c47a",
+      "commands": [
+        [
+          "cmake",
+          "-S",
+          "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-baseline",
+          "-B",
+          "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-baseline\\build",
+          "-G",
+          "Ninja",
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DSKBUILD_PROJECT_NAME=carla",
+          "-DPython3_EXECUTABLE=$TASK_ROOT\\Carla-expanded-validation\\.venv\\Scripts\\python.exe"
+        ],
+        [
+          "cmake",
+          "--build",
+          "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-baseline\\build",
+          "--target",
+          "carla",
+          "--parallel",
+          "1"
+        ]
+      ],
+      "native_archive": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\LibCarla\\carla-client.lib",
+      "scope": "Actual original or submitted SensorData.cpp with unchanged checked-in serializer/weak-owner factories, same fresh combined-three native archive and16 binding objects. Private fixture module."
+    },
+    {
+      "variant": "patched",
+      "combined_head": "72ad61f5f611e990e29c992ffe949aa97f53e846",
+      "pr10117_head": "80abe0132cc974faf0ca776ebf8fb1e88958eb7e",
+      "sensor_source_sha256": "4031702425681c764f55d916ff6e4e03d629c88e3307168db1c32f91943aa69b",
+      "module": "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-patched\\build\\carla.cp312-win_amd64.pyd",
+      "module_sha256": "6530994ef384748148ad088d0210b4a5878d3f1b2445f90af3aa156b4ff5cdd7",
+      "commands": [
+        [
+          "cmake",
+          "-S",
+          "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-patched",
+          "-B",
+          "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-patched\\build",
+          "-G",
+          "Ninja",
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DSKBUILD_PROJECT_NAME=carla",
+          "-DPython3_EXECUTABLE=$TASK_ROOT\\Carla-expanded-validation\\.venv\\Scripts\\python.exe"
+        ],
+        [
+          "cmake",
+          "--build",
+          "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-patched\\build",
+          "--target",
+          "carla",
+          "--parallel",
+          "1"
+        ]
+      ],
+      "native_archive": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\LibCarla\\carla-client.lib",
+      "scope": "Actual original or submitted SensorData.cpp with unchanged checked-in serializer/weak-owner factories, same fresh combined-three native archive and16 binding objects. Private fixture module."
+    }
+  ],
+  "production_hashes": {
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Actor.cpp.obj": "6e77f6073e80c345523de753a52de99ceafe652bb7c4c69750ab26ad51513a2b",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Blueprint.cpp.obj": "ec2565e7de0ac74cd50335c2b06699e4d59c4aae9c2f2152858b7cc9659a2286",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Client.cpp.obj": "b5aeaf2d2d0ed5754fb32339f8dfd1693677fcbd3f810e19ce321d0c2638ad75",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Commands.cpp.obj": "09c5cf671ce693326fb54bf48651dcb0d122a4740adf8d53ff6819a9f7c3e6d4",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Control.cpp.obj": "4fd05c8413b3cd467c4196a0ddf411878a40b3f9fea8203ebbe6c90f5026bd02",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Exception.cpp.obj": "31a9f38a69761240159af9bbe1d0604d0e172a4efcb84ee6330e6e982358fb91",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Geometry.cpp.obj": "5bd092a1805f3fdcb1eb0f51c90b840da0e9480603c648b1d328050aa5e03c61",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\LightManager.cpp.obj": "2d4d2a2872af552f31353941692690ff0399d43aad1964cd078c1363d357ebbc",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Map.cpp.obj": "86198de8b1f967ebdc4ee5e6cd24cc3b854351df8ce1d198533158cde333d692",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\PythonAPI.cpp.obj": "f63c7fb5931161a2fef975c8743f8e2b70766391dc45a2e84813cf349d03685b",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Sensor.cpp.obj": "427c14db799d80bb9823113dcae2f384eb9ecfdd2c4b1560f6f346b6bb903467",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Snapshot.cpp.obj": "731d666c2953a7e2c3654b538a49deecf6a5c2f1c3c3cf6217cb0185db8b73a2",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\TrafficManager.cpp.obj": "81511f4cb58e67140845a2c6492299884c54f9e7122dde543a2c160f8dbe2c94",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\V2XData.cpp.obj": "67241a81e7d707dcaaf668584f7f39cfb86a936e6dbf4269d3ae2b1087320980",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Weather.cpp.obj": "64b0b6f7e7155cebeead8c5e200164adc891fba3982dd99ca91c2185db8890d8",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\World.cpp.obj": "6180f38963e127ee06ab6e4d3fdb21672a8049db6a0c5bb2ce234dc51e82914b",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\LibCarla\\carla-client.lib": "351fa096ca6d9ef578a0394c3d1fe090deac5e6173b2891814124dcd5f354b07",
+    "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\carla.cp312-win_amd64.pyd": "3b8d17ade10f9faf14d763b2685d8e0dcd12c292c05a98e7810b9d2e609cf303"
+  },
+  "production_artifacts_unchanged": true
+}

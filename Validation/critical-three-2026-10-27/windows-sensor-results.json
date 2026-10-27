@@ -1,0 +1,252 @@
+{
+  "items": [
+    {
+      "module": "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-baseline\\build\\carla.cp312-win_amd64.pyd",
+      "python": "3.12.13 (main, Apr 14 2026, 14:31:26) [MSC v.1944 64 bit (AMD64)]",
+      "development_mode": true,
+      "records": [
+        {
+          "iteration": 1,
+          "tests": 11,
+          "failure_events": 9,
+          "failed_methods": [
+            "sensor_data_binding_regressions.TestRawBufferLifetime.test_chained_slices_and_casts_keep_native_storage_alive",
+            "sensor_data_binding_regressions.TestRawBufferLifetime.test_fake_image_derived_view_keeps_its_value_owner",
+            "sensor_data_binding_regressions.TestRawBufferLifetime.test_multiple_exports_release_native_storage_only_after_the_last_view",
+            "sensor_data_binding_regressions.TestRawBufferLifetime.test_native_packet_storage_survives_original_python_wrapper",
+            "sensor_data_binding_regressions.TestRawBufferLifetime.test_numpy_view_keeps_native_storage_until_the_array_is_deleted"
+          ],
+          "errors": 0,
+          "skips": 0
+        }
+      ],
+      "variant": "baseline",
+      "repetitions": 1,
+      "command": [
+        "$TASK_ROOT\\Carla-expanded-validation\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-X",
+        "dev",
+        "-B",
+        "-c",
+        "\nimport json\nfrom pathlib import Path\nimport sys\nimport unittest\nsys.path.insert(0, sys.argv[1])\nsys.path.insert(0, sys.argv[2])\nimport carla\nimport sensor_data_binding_regressions\nassert Path(carla.__file__).resolve().parent == Path(sys.argv[1]).resolve()\nrecords = []\nfor iteration in range(int(sys.argv[3])):\n    suite = unittest.defaultTestLoader.loadTestsFromModule(sensor_data_binding_regressions)\n    result = unittest.TextTestRunner(verbosity=2).run(suite)\n    records.append({'iteration': iteration + 1, 'tests': result.testsRun, 'failure_events': len(result.failures), 'failed_methods': sorted({getattr(item, 'test_case', item).id() for item, _ in result.failures}), 'errors': len(result.errors), 'skips': len(result.skipped)})\n    if result.errors or (iteration and not result.wasSuccessful()):\n        break\nprint(json.dumps({'module': carla.__file__, 'python': sys.version, 'development_mode': sys.flags.dev_mode, 'records': records}))\n",
+        "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-baseline\\build",
+        "$TASK_ROOT\\Carla-critical-sensor-windows-review\\PythonAPI\\test\\unit\\native",
+        "1"
+      ]
+    },
+    {
+      "module": "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-patched\\build\\carla.cp312-win_amd64.pyd",
+      "python": "3.12.13 (main, Apr 14 2026, 14:31:26) [MSC v.1944 64 bit (AMD64)]",
+      "development_mode": true,
+      "records": [
+        {
+          "iteration": 1,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        }
+      ],
+      "variant": "patched",
+      "repetitions": 1,
+      "command": [
+        "$TASK_ROOT\\Carla-expanded-validation\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-X",
+        "dev",
+        "-B",
+        "-c",
+        "\nimport json\nfrom pathlib import Path\nimport sys\nimport unittest\nsys.path.insert(0, sys.argv[1])\nsys.path.insert(0, sys.argv[2])\nimport carla\nimport sensor_data_binding_regressions\nassert Path(carla.__file__).resolve().parent == Path(sys.argv[1]).resolve()\nrecords = []\nfor iteration in range(int(sys.argv[3])):\n    suite = unittest.defaultTestLoader.loadTestsFromModule(sensor_data_binding_regressions)\n    result = unittest.TextTestRunner(verbosity=2).run(suite)\n    records.append({'iteration': iteration + 1, 'tests': result.testsRun, 'failure_events': len(result.failures), 'failed_methods': sorted({getattr(item, 'test_case', item).id() for item, _ in result.failures}), 'errors': len(result.errors), 'skips': len(result.skipped)})\n    if result.errors or (iteration and not result.wasSuccessful()):\n        break\nprint(json.dumps({'module': carla.__file__, 'python': sys.version, 'development_mode': sys.flags.dev_mode, 'records': records}))\n",
+        "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-patched\\build",
+        "$TASK_ROOT\\Carla-critical-sensor-windows-review\\PythonAPI\\test\\unit\\native",
+        "1"
+      ]
+    },
+    {
+      "module": "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-patched\\build\\carla.cp312-win_amd64.pyd",
+      "python": "3.12.13 (main, Apr 14 2026, 14:31:26) [MSC v.1944 64 bit (AMD64)]",
+      "development_mode": true,
+      "records": [
+        {
+          "iteration": 1,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 2,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 3,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 4,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 5,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 6,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 7,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 8,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 9,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 10,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 11,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 12,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 13,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 14,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 15,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 16,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 17,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 18,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 19,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "iteration": 20,
+          "tests": 11,
+          "failure_events": 0,
+          "failed_methods": [],
+          "errors": 0,
+          "skips": 0
+        }
+      ],
+      "variant": "patched",
+      "repetitions": 20,
+      "command": [
+        "$TASK_ROOT\\Carla-expanded-validation\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-X",
+        "dev",
+        "-B",
+        "-c",
+        "\nimport json\nfrom pathlib import Path\nimport sys\nimport unittest\nsys.path.insert(0, sys.argv[1])\nsys.path.insert(0, sys.argv[2])\nimport carla\nimport sensor_data_binding_regressions\nassert Path(carla.__file__).resolve().parent == Path(sys.argv[1]).resolve()\nrecords = []\nfor iteration in range(int(sys.argv[3])):\n    suite = unittest.defaultTestLoader.loadTestsFromModule(sensor_data_binding_regressions)\n    result = unittest.TextTestRunner(verbosity=2).run(suite)\n    records.append({'iteration': iteration + 1, 'tests': result.testsRun, 'failure_events': len(result.failures), 'failed_methods': sorted({getattr(item, 'test_case', item).id() for item, _ in result.failures}), 'errors': len(result.errors), 'skips': len(result.skipped)})\n    if result.errors or (iteration and not result.wasSuccessful()):\n        break\nprint(json.dumps({'module': carla.__file__, 'python': sys.version, 'development_mode': sys.flags.dev_mode, 'records': records}))\n",
+        "$TASK_ROOT\\carla-audit-evidence\\reopened-critical-three\\windows-sensor\\fresh-binding-patched\\build",
+        "$TASK_ROOT\\Carla-critical-sensor-windows-review\\PythonAPI\\test\\unit\\native",
+        "20"
+      ]
+    }
+  ],
+  "source_head": "80abe0132cc974faf0ca776ebf8fb1e88958eb7e",
+  "combined_source_head": "72ad61f5f611e990e29c992ffe949aa97f53e846",
+  "same_native_archive_and_other16_binding_objects": true
+}

@@ -1,0 +1,30 @@
+CARLA validation record, 27 October 2026
+
+The tested PR commits are listed in summary.json. The Windows source combines PR #9999, PR #10055 and PR #10117. The Linux concurrency source combines PR #9999 and PR #10055. The Linux sensor source is the exact PR #10117 head. Source manifests record the file identities.
+
+Windows used MSVC 19.44, CMake 4.4.3 and CPython 3.12.13. Linux used Ubuntu 24.04, GCC 13, Clang 18, CMake 3.28.3 and CPython 3.12.3. Builds used pinned dependency source directories. Each validation build compiled fresh CARLA objects and archives.
+
+Host build commands use the repository CMake configuration. Set Python_EXECUTABLE and Python3_EXECUTABLE to the same Python 3.12 interpreter. The recorded configuration and artifact manifests provide the tested arguments and hashes.
+
+cmake -S . -B Build/HostValidation -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE= -DBUILD_CARLA_UNREAL=OFF -DBUILD_CARLA_CLIENT=ON -DBUILD_CARLA_SERVER=ON -DBUILD_PYTHON_API=ON -DBUILD_LIBCARLA_TESTS=ON -DBUILD_EXAMPLES=OFF -DENABLE_ROS2=OFF -DENABLE_RSS=OFF -DENABLE_OSM2ODR=OFF -DCARLA_DLSS_SDK_PATH=disabled
+cmake --build Build/HostValidation --target carla-client carla-server carla-python-api libcarla_test_client libcarla_test_server
+
+The native client executable runs the existing public regression cases. Windows adds the .exe filename suffix.
+
+Build/HostValidation/LibCarla/libcarla_test_client --gtest_filter=episode_concurrency.*:traffic_manager_worker.* --gtest_repeat=20
+
+The sensor C API target uses the checked-in standalone CMake project.
+
+cmake -S PythonAPI/test/unit/native -B Build/RawDataBufferTests -DCMAKE_BUILD_TYPE=Release
+cmake --build Build/RawDataBufferTests --config Release
+ctest --test-dir Build/RawDataBufferTests -C Release --output-on-failure
+
+PythonAPI/test/unit/native/README.md documents the actual sensor binding fixture. Its builder uses a retained production Python backend with all 17 binding objects and compile_commands.json. The existing 11 tests exercise real serialized packet storage through private test factories. The installed production wheel has no private factory exports.
+
+ThreadSanitizer instrumentation used Clang 18, -fsanitize=thread, -fno-omit-frame-pointer, -g and -O1 across the fresh client library and dependencies. The worker cases passed 20 repetitions. The complete paired run produced the retained transport race report. The run used no ThreadSanitizer suppressions.
+
+Windows full native results contain five assertion failures and one process timeout. The failed test source files match upstream 5aff. The report preserves each failed output. The RPC case had a 45 second bound. An initial 90 second bound interrupted a targeted 20 repetition run. The recorded 240 second bound completed that run in 94.968 seconds.
+
+Full Unreal simulator builds and live smoke tests remain unrun. Hosted CI awaits maintainer approval. The previous PR #10117 workflow expired before approval. Failed gates remain open in the PR checklists.
+
+Published logs replace local source directories with path placeholders. The file manifest hashes the committed contents. Raw test output retains its original whitespace.

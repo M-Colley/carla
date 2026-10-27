@@ -1,0 +1,103 @@
+{
+  "base": "5aff00dac2de205116f070542784e8d4777676f4",
+  "features": {
+    "9999": {
+      "head": "e726ea76978618fd28c6db164fa9a7a4777224ff",
+      "commits": [
+        "e726ea76978618fd28c6db164fa9a7a4777224ff"
+      ],
+      "paths": [
+        "CHANGELOG.md",
+        "LibCarla/source/carla/client/detail/Episode.cpp",
+        "LibCarla/source/carla/client/detail/Episode.h",
+        "LibCarla/source/test/client/EpisodeTestServer.h",
+        "LibCarla/source/test/client/test_episode_concurrency.cpp",
+        "Util/Tests/EpisodeConcurrency/CMakeLists.txt",
+        "Util/Tests/EpisodeConcurrency/README.md"
+      ]
+    },
+    "10055": {
+      "head": "7d110f5596a2390262cb581407e4c5eb612ca282",
+      "commits": [
+        "aed50984139e74febb4ed8f7eff87efe4df81339",
+        "35405847472d7968eb1495f96bbf7bf660a93fbb",
+        "6b404bff75355652ea22f3195780e485182bb19d",
+        "7d110f5596a2390262cb581407e4c5eb612ca282"
+      ],
+      "paths": [
+        "CHANGELOG.md",
+        "LibCarla/source/carla/trafficmanager/TrafficManagerLocal.cpp",
+        "LibCarla/source/carla/trafficmanager/WorkerException.h",
+        "LibCarla/source/test/client/test_traffic_manager_worker.cpp"
+      ]
+    },
+    "10117": {
+      "head": "80abe0132cc974faf0ca776ebf8fb1e88958eb7e",
+      "commits": [
+        "1332a447f5cfe144d0d3c8b27af8939127b24d7f",
+        "80abe0132cc974faf0ca776ebf8fb1e88958eb7e"
+      ],
+      "paths": [
+        "CHANGELOG.md",
+        "Docs/python_api.md",
+        "PythonAPI/carla/src/RawDataBuffer.h",
+        "PythonAPI/carla/src/SensorData.cpp",
+        "PythonAPI/docs/sensor_data.yml",
+        "PythonAPI/test/unit/native/CMakeLists.txt",
+        "PythonAPI/test/unit/native/README.md",
+        "PythonAPI/test/unit/native/build_sensor_data_fixture.py",
+        "PythonAPI/test/unit/native/sensor_data_binding_regressions.py",
+        "PythonAPI/test/unit/native/sensor_data_test_factory.inc",
+        "PythonAPI/test/unit/native/test_raw_data_buffer.cpp"
+      ]
+    }
+  },
+  "head": "72ad61f5f611e990e29c992ffe949aa97f53e846",
+  "tree": "a100b941c195e031970a5bb5d17ea4446c276c42",
+  "paths": [
+    "CHANGELOG.md",
+    "Docs/python_api.md",
+    "LibCarla/source/carla/client/detail/Episode.cpp",
+    "LibCarla/source/carla/client/detail/Episode.h",
+    "LibCarla/source/carla/trafficmanager/TrafficManagerLocal.cpp",
+    "LibCarla/source/carla/trafficmanager/WorkerException.h",
+    "LibCarla/source/test/client/EpisodeTestServer.h",
+    "LibCarla/source/test/client/test_episode_concurrency.cpp",
+    "LibCarla/source/test/client/test_traffic_manager_worker.cpp",
+    "PythonAPI/carla/src/RawDataBuffer.h",
+    "PythonAPI/carla/src/SensorData.cpp",
+    "PythonAPI/docs/sensor_data.yml",
+    "PythonAPI/test/unit/native/CMakeLists.txt",
+    "PythonAPI/test/unit/native/README.md",
+    "PythonAPI/test/unit/native/build_sensor_data_fixture.py",
+    "PythonAPI/test/unit/native/sensor_data_binding_regressions.py",
+    "PythonAPI/test/unit/native/sensor_data_test_factory.inc",
+    "PythonAPI/test/unit/native/test_raw_data_buffer.cpp",
+    "Util/Tests/EpisodeConcurrency/CMakeLists.txt",
+    "Util/Tests/EpisodeConcurrency/README.md"
+  ],
+  "blobs": {
+    "LibCarla/source/carla/client/detail/Episode.cpp": "fe1087e9b3b2c2b4c7bc238e7ab6f2c0e3440183",
+    "LibCarla/source/carla/client/detail/Episode.h": "7efdc1c59ed69c945773edeb74a26e53cfa89665",
+    "LibCarla/source/test/client/EpisodeTestServer.h": "97f57abb9c3041f9d61660d8f972cfd8654b2d1d",
+    "LibCarla/source/test/client/test_episode_concurrency.cpp": "bbab213c728bf38e83bab3997c54d471b202b080",
+    "Util/Tests/EpisodeConcurrency/CMakeLists.txt": "92248c018301413421642d36abfc7b5a91739131",
+    "Util/Tests/EpisodeConcurrency/README.md": "de2a87075ff0a2f565c4e5b7cf1ebd14ca6bf391",
+    "LibCarla/source/carla/trafficmanager/TrafficManagerLocal.cpp": "0a81cd227d7756d5c70d66d6b376ec6e2d333264",
+    "LibCarla/source/carla/trafficmanager/WorkerException.h": "48598a59cdeba77e2235227d24cc6cfbe7c80922",
+    "LibCarla/source/test/client/test_traffic_manager_worker.cpp": "d874a99c47fed6d5ab4e57f2547d51fe2db4b673",
+    "Docs/python_api.md": "36545f40952f725a24a3f2dc210bbf3a6e741566",
+    "PythonAPI/carla/src/RawDataBuffer.h": "580eb03e9d2476d07f036454802948825e21d50e",
+    "PythonAPI/carla/src/SensorData.cpp": "fe11cbf59b31305adad77684c1954de5c70d2489",
+    "PythonAPI/docs/sensor_data.yml": "2beff1d3bdd45d13dffbda83c99b616d8bee0501",
+    "PythonAPI/test/unit/native/CMakeLists.txt": "050e950caa89d4e04aeb84dfa197ec1b0a27be74",
+    "PythonAPI/test/unit/native/README.md": "722b6dca15eeed5e327b08c52a5506012d2b7527",
+    "PythonAPI/test/unit/native/build_sensor_data_fixture.py": "45be0fd81ce97562941c4def19debe09bbbd9427",
+    "PythonAPI/test/unit/native/sensor_data_binding_regressions.py": "4b485f0e01e19ba328b33f6483d84109638cd74b",
+    "PythonAPI/test/unit/native/sensor_data_test_factory.inc": "7b3fa3a2ca2c000582017254f6699c9e843afe75",
+    "PythonAPI/test/unit/native/test_raw_data_buffer.cpp": "9e798ef5e5e69a2c0becf8e2e4b9af0f74c89854"
+  },
+  "production_files_match_exact_pr_head_blobs": true,
+  "exception": "CHANGELOG.md contains the automatic combination of the three independent entries; no conflicts or manual edits.",
+  "status": ""
+}

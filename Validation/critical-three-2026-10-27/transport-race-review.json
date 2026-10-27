@@ -1,0 +1,54 @@
+{
+  "pair_head": "aea8a108fb901686a6cee401a87ae567cbdcde3e",
+  "status": "Unsuppressed full TSAN gate NOT green; no production/test edits or runtime suppressions.",
+  "evidence": "tsan-stress/all-unsuppressed-until-failure-18.log",
+  "accesses": [
+    {
+      "file": "LibCarla/source/carla/streaming/detail/tcp/ServerSession.cpp",
+      "line": 101,
+      "operation": "plain bool _is_writing=false in async completion on streaming IO worker"
+    },
+    {
+      "file": "LibCarla/source/carla/streaming/detail/tcp/ServerSession.cpp",
+      "line": 86,
+      "operation": "plain bool _is_writing read in caller thread during public Write"
+    }
+  ],
+  "declaration": {
+    "file": "LibCarla/source/carla/streaming/detail/tcp/ServerSession.h",
+    "line": 112,
+    "text": "bool _is_writing = false;"
+  },
+  "call_chain": [
+    "EpisodeTestServer::Publish acquires _publish_mutex for entire write, serializing every application producer.",
+    "Public streaming::detail::Stream::Write forwards directly to MultiStreamState::Write.",
+    "Single-session MultiStreamState::Write calls ServerSession::Write on producer thread.",
+    "ServerSession async completion is bound to its IO strand and writes same plain bool on the separate IO thread."
+  ],
+  "contract_review": "No public Stream::Write or ServerSession::Write documented IO-thread-only precondition. The fixture has one IO worker, serializes application writes, and bootstraps a real subscribed connection. A single application writer remains concurrent with async completion; this is not overlapping user writes or an invented callback invocation.",
+  "provenance": [
+    {
+      "path": "LibCarla/source/carla/streaming/detail/tcp/ServerSession.cpp",
+      "base_and_pair_git_blob": "35f84e361b1e08494ea67c6cdb21aa6922791fe8",
+      "sha256": "a753a6c5d3f4da4203096f3557753d36fc0ff770cb9fb8b948459a869ceb1156"
+    },
+    {
+      "path": "LibCarla/source/carla/streaming/detail/tcp/ServerSession.h",
+      "base_and_pair_git_blob": "5162ba73eef34e5db7055ce8100f5b3380fbb8e9",
+      "sha256": "f2dc9ad9fc012387ce137fc83938024c9a75d9d6206f4597d189dd9123ca1177"
+    },
+    {
+      "path": "LibCarla/source/carla/streaming/detail/MultiStreamState.h",
+      "base_and_pair_git_blob": "baaf7eba12f8845cc7ecd18d0150e3ef9ada7ade",
+      "sha256": "41ce7e1e3457ace079629b417e05643d01084233fd9640046574a6cc9e0c2cc1"
+    },
+    {
+      "path": "LibCarla/source/carla/streaming/detail/Stream.h",
+      "base_and_pair_git_blob": "606ba7374ba111669a5d5fc7eb9220885eb0c67b",
+      "sha256": "33fd3a87ca1be7aab4fcc3df8f697f49794b03a034812bc8490b397b95be33ae"
+    }
+  ],
+  "attribution": "Transport source is byte-identical current upstream5aff and paired tree; outside both reviewed PR deltas. No existing PR id assigned without file-overlap proof.",
+  "repetition": "Initial interactive full run reported same race. A separate captured20-run-until-fail comparison passed17 complete runs then reported same race on18. An intervening single full pass and individually passing cases do not erase the retained negative.",
+  "unchanged_scope": "No transport fix/new PR/quantity work is authorized or performed."
+}

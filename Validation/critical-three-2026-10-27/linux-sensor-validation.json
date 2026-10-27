@@ -1,0 +1,33 @@
+{
+  "pr": 10117,
+  "head": "80abe0132cc974faf0ca776ebf8fb1e88958eb7e",
+  "status": "Linux exact-head host client/Python API build and existing ownership revalidation passed",
+  "findings": [],
+  "code_changes": false,
+  "commits_changed": false,
+  "github_modified": false,
+  "fresh_client_translation_units": 128,
+  "fresh_binding_translation_units": 17,
+  "binding_methods_passed": 11,
+  "baseline_failed_subcases": 9,
+  "baseline_affected_methods": 5,
+  "baseline_passing_methods": 6,
+  "binding_repetitions": 20,
+  "binding_repeated_case_executions": 220,
+  "core_cases": 10,
+  "core_repetitions": 20,
+  "core_repeated_case_executions": 200,
+  "source_and_production_artifacts_unchanged": true,
+  "evidence": [
+    "fresh-exact-head-build.json",
+    "production-artifact-provenance.json",
+    "installed-production-module.json",
+    "binding-revalidation.json",
+    "capi-revalidation.json",
+    "source-review.json",
+    "runtime-versions.json"
+  ],
+  "full_unreal_build": false,
+  "live_sensor_server": false,
+  "validation_body_fragment": "pr-description-validation.md"
+}

@@ -1,0 +1,177 @@
+{
+  "source_head": "72ad61f5f611e990e29c992ffe949aa97f53e846",
+  "source_tree": "a100b941c195e031970a5bb5d17ea4446c276c42",
+  "source_status": "",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.13 (main, Apr 14 2026, 14:31:26) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "$TASK_ROOT\\Carla-expanded-validation\\.venv\\Scripts\\python.exe",
+  "cmake": "cmake version 4.4.3",
+  "ninja": "1.13.2.git.kitware.jobserver-pipe-1",
+  "cache": {
+    "BUILD_CARLA_CLIENT:BOOL": "ON",
+    "BUILD_CARLA_SERVER:BOOL": "ON",
+    "BUILD_CARLA_UNREAL:BOOL": "OFF",
+    "BUILD_EXAMPLES:BOOL": "OFF",
+    "BUILD_LIBCARLA_TESTS:BOOL": "ON",
+    "BUILD_OSM_WORLD_RENDERER:BOOL": "OFF",
+    "BUILD_PYTHON_API:BOOL": "ON",
+    "CARLA_UNREAL_ENGINE_PATH:STRING": "C:/carla-ue58/UnrealEngine5_carla",
+    "CMAKE_BUILD_TYPE:STRING": "Release",
+    "CMAKE_CXX_COMPILER:FILEPATH": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe",
+    "ENABLE_ALL_WARNINGS:BOOL": "ON",
+    "ENABLE_EXCEPTIONS:BOOL": "ON",
+    "ENABLE_OSM2ODR:BOOL": "OFF",
+    "ENABLE_PEP517:BOOL": "ON",
+    "ENABLE_PYTORCH:BOOL": "OFF",
+    "ENABLE_ROS2:BOOL": "OFF",
+    "ENABLE_ROS2_DEMO:BOOL": "OFF",
+    "ENABLE_RSS:BOOL": "OFF",
+    "ENABLE_RTTI:BOOL": "ON",
+    "ENABLE_WARNINGS_TO_ERRORS:BOOL": "OFF",
+    "FETCHCONTENT_SOURCE_DIR_BOOST:PATH": "$TASK_ROOT/Carla/Build/isolated-deps/boost-src",
+    "FETCHCONTENT_SOURCE_DIR_EIGEN:PATH": "$TASK_ROOT/Carla/Build/isolated-deps/eigen-src",
+    "FETCHCONTENT_SOURCE_DIR_GOOGLETEST:PATH": "$TASK_ROOT/Carla/Build/isolated-deps/googletest-src",
+    "FETCHCONTENT_SOURCE_DIR_LIBPNG:PATH": "$TASK_ROOT/Carla/Build/isolated-deps/libpng-src",
+    "FETCHCONTENT_SOURCE_DIR_RECASTNAVIGATION:PATH": "$TASK_ROOT/Carla/Build/Release/_deps/recastnavigation-src",
+    "FETCHCONTENT_SOURCE_DIR_RPCLIB:PATH": "$TASK_ROOT/Carla/Build/Release/_deps/rpclib-src",
+    "FETCHCONTENT_SOURCE_DIR_SQLITE3:PATH": "$TASK_ROOT/Carla/Build/isolated-deps/sqlite3-src",
+    "FETCHCONTENT_SOURCE_DIR_ZLIB:PATH": "$TASK_ROOT/Carla/Build/isolated-deps/zlib-src",
+    "Python3_EXECUTABLE:UNINITIALIZED": "$TASK_ROOT\\Carla-expanded-validation\\.venv\\Scripts\\python.exe",
+    "Python_EXECUTABLE:UNINITIALIZED": "$TASK_ROOT\\Carla-expanded-validation\\.venv\\Scripts\\python.exe",
+    "BUILD_GMOCK:INTERNAL": "OFF",
+    "BUILD_TESTING:INTERNAL": "OFF"
+  },
+  "backend_translation_units": 17,
+  "files": [
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\LibCarla\\carla-client.lib",
+      "bytes": 164116574,
+      "sha256": "351fa096ca6d9ef578a0394c3d1fe090deac5e6173b2891814124dcd5f354b07"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\LibCarla\\carla-server.lib",
+      "bytes": 60086080,
+      "sha256": "42b01a0e02e20b61916caf1ec226fb3c8c5ca5a3538f497618b62989049d2742"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\LibCarla\\libcarla_test_client.exe",
+      "bytes": 2629632,
+      "sha256": "25004e4e8fffe4b618484844b90b4fcaf269ca857ec04dd4214c644ded291ea9"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\LibCarla\\libcarla_test_server.exe",
+      "bytes": 1176064,
+      "sha256": "83a93f2a24a3d2a437657174290b377ec30b46e29eaa1e810c0ae83af1d5d567"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\carla-episode-tests.exe",
+      "bytes": 950272,
+      "sha256": "2353039f672f77fd2f213817f3904215ccd979244db67b137b07701245baa620"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonAPI\\dist\\carla-0.10.0-cp312-cp312-win_amd64.whl",
+      "bytes": 1715013,
+      "sha256": "fb32fadd9991d3fcd00a78b218d23cfb93caa8a1cbee3df18504fb5ec293bb1c"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonAPI\\retained-dist\\carla-0.10.0-cp312-cp312-win_amd64.whl",
+      "bytes": 1715011,
+      "sha256": "0a6cc1b4515470617be103da1e73cbe15ae529d66f859889d043f2ef3409a311"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\carla.cp312-win_amd64.pyd",
+      "bytes": 5001728,
+      "sha256": "3b8d17ade10f9faf14d763b2685d8e0dcd12c292c05a98e7810b9d2e609cf303"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\compile_commands.json",
+      "bytes": 197261,
+      "sha256": "c02abf45f8b3bb43b92b6fa2dff7f7c22c430e4c323c80a26113bfb766d7d185"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Actor.cpp.obj",
+      "bytes": 6399939,
+      "sha256": "6e77f6073e80c345523de753a52de99ceafe652bb7c4c69750ab26ad51513a2b"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Blueprint.cpp.obj",
+      "bytes": 5680862,
+      "sha256": "ec2565e7de0ac74cd50335c2b06699e4d59c4aae9c2f2152858b7cc9659a2286"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Client.cpp.obj",
+      "bytes": 4554544,
+      "sha256": "b5aeaf2d2d0ed5754fb32339f8dfd1693677fcbd3f810e19ce321d0c2638ad75"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Commands.cpp.obj",
+      "bytes": 11723809,
+      "sha256": "09c5cf671ce693326fb54bf48651dcb0d122a4740adf8d53ff6819a9f7c3e6d4"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Control.cpp.obj",
+      "bytes": 19129580,
+      "sha256": "4fd05c8413b3cd467c4196a0ddf411878a40b3f9fea8203ebbe6c90f5026bd02"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Exception.cpp.obj",
+      "bytes": 385288,
+      "sha256": "31a9f38a69761240159af9bbe1d0604d0e172a4efcb84ee6330e6e982358fb91"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Geometry.cpp.obj",
+      "bytes": 14769068,
+      "sha256": "5bd092a1805f3fdcb1eb0f51c90b840da0e9480603c648b1d328050aa5e03c61"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\LightManager.cpp.obj",
+      "bytes": 3082820,
+      "sha256": "2d4d2a2872af552f31353941692690ff0399d43aad1964cd078c1363d357ebbc"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Map.cpp.obj",
+      "bytes": 7307379,
+      "sha256": "86198de8b1f967ebdc4ee5e6cd24cc3b854351df8ce1d198533158cde333d692"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\PythonAPI.cpp.obj",
+      "bytes": 277122,
+      "sha256": "f63c7fb5931161a2fef975c8743f8e2b70766391dc45a2e84813cf349d03685b"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Sensor.cpp.obj",
+      "bytes": 1683119,
+      "sha256": "427c14db799d80bb9823113dcae2f384eb9ecfdd2c4b1560f6f346b6bb903467"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\SensorData.cpp.obj",
+      "bytes": 14948587,
+      "sha256": "504031df6dc1c30f7bea1e727b6c943a71be285a5f78e7065a7596e06126d178"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Snapshot.cpp.obj",
+      "bytes": 2121451,
+      "sha256": "731d666c2953a7e2c3654b538a49deecf6a5c2f1c3c3cf6217cb0185db8b73a2"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\TrafficManager.cpp.obj",
+      "bytes": 1329844,
+      "sha256": "81511f4cb58e67140845a2c6492299884c54f9e7122dde543a2c160f8dbe2c94"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\V2XData.cpp.obj",
+      "bytes": 3368163,
+      "sha256": "67241a81e7d707dcaaf668584f7f39cfb86a936e6dbf4269d3ae2b1087320980"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\Weather.cpp.obj",
+      "bytes": 1070132,
+      "sha256": "64b0b6f7e7155cebeead8c5e200164adc891fba3982dd99ca91c2185db8890d8"
+    },
+    {
+      "path": "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\PythonBackend\\CMakeFiles\\carla.dir\\src\\World.cpp.obj",
+      "bytes": 9282150,
+      "sha256": "6180f38963e127ee06ab6e4d3fdb21672a8049db6a0c5bb2ce234dc51e82914b"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "base": "5aff00dac2de205116f070542784e8d4777676f4",
+  "pr_heads": {
+    "9999": "e726ea76978618fd28c6db164fa9a7a4777224ff",
+    "10055": "7d110f5596a2390262cb581407e4c5eb612ca282"
+  },
+  "pair_head": "aea8a108fb901686a6cee401a87ae567cbdcde3e",
+  "source": "$LINUX_PAIR/pair-source",
+  "source_blob_checks": [
+    {
+      "pr": "9999",
+      "path": "LibCarla/source/carla/client/detail/Episode.cpp",
+      "sha256": "0a8638bb7b8a32988acde6ebad57c93b3940b6d8d672b838e6c6253018f83ef0"
+    },
+    {
+      "pr": "9999",
+      "path": "LibCarla/source/carla/client/detail/Episode.h",
+      "sha256": "d653f9eb3a5b1942b2e3ea5bb6548a8825fa71f701e63ca15d39e0c3c6424cb6"
+    },
+    {
+      "pr": "9999",
+      "path": "LibCarla/source/test/client/EpisodeTestServer.h",
+      "sha256": "076c12104a7abe0d46799b541e677131b23833ee07b9cb336fb6293b177426db"
+    },
+    {
+      "pr": "9999",
+      "path": "LibCarla/source/test/client/test_episode_concurrency.cpp",
+      "sha256": "bfa52bdebd8027f5d88c99fe483d7cd9e9567093745bf376ddcff1b45eafd761"
+    },
+    {
+      "pr": "9999",
+      "path": "Util/Tests/EpisodeConcurrency/CMakeLists.txt",
+      "sha256": "522e27b27b590dc878b91cf1cacda763fb33746aaba8a88a98c74e51d8ae1fa7"
+    },
+    {
+      "pr": "9999",
+      "path": "Util/Tests/EpisodeConcurrency/README.md",
+      "sha256": "0e09b5b6950f28d1cc6b10deb9c901ea059fd5b518846cf6f2511f205035f95d"
+    },
+    {
+      "pr": "10055",
+      "path": "LibCarla/source/carla/trafficmanager/TrafficManagerLocal.cpp",
+      "sha256": "8cdc3b41ba7a921dbc4d4e2b13f7434d2a5101aaa61ddab2019d4c8ec97b82a2"
+    },
+    {
+      "pr": "10055",
+      "path": "LibCarla/source/carla/trafficmanager/WorkerException.h",
+      "sha256": "856b58810f4a88b533d8a9cc9965ae9877ef9f4508536387e9d0d12574464b80"
+    },
+    {
+      "pr": "10055",
+      "path": "LibCarla/source/test/client/test_traffic_manager_worker.cpp",
+      "sha256": "749fc4247b75da7f16fab10553480832ef05a7bba7f18415958926dc542e2365"
+    }
+  ],
+  "scope": "Exact production/test/doc blobs from9999 and10055 only on5aff; changelog excluded from validation union, no other prior fixes. External target adds pre-existing worker\u2192Episode forwarding fixture only; committed production/tests unmodified.",
+  "new_roots": 0,
+  "external_target": "$LINUX_PAIR/pair-targets.cmake"
+}

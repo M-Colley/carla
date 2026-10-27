@@ -1,0 +1,11 @@
+Running main() from $TASK_ROOT\Carla\Build\isolated-deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = rpc.server_bind_sync_run_on_game_thread
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from rpc
+[ RUN      ] rpc.server_bind_sync_run_on_game_thread
+game thread: run 1000000 slices.
+$TASK_ROOT\Carla-critical-three-windows\LibCarla\source\test\client\test_rpc.cpp(63): error: Value of: done
+  Actual: false
+Expected: true
+

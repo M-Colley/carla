@@ -1,0 +1,19 @@
+Running main() from $TASK_ROOT\Carla\Build\isolated-deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = streaming.low_level_tcp_small_message
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from streaming
+[ RUN      ] streaming.low_level_tcp_small_message
+client received 0 messages
+$TASK_ROOT\Carla-critical-three-windows\LibCarla\source\test\common\test_streaming.cpp(184): error: Expected: (message_count) > (10u), actual: 0 vs 10
+
+[  FAILED  ] streaming.low_level_tcp_small_message (2005 ms)
+[----------] 1 test from streaming (2005 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2005 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] streaming.low_level_tcp_small_message
+
+ 1 FAILED TEST

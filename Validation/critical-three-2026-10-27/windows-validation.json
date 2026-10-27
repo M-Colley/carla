@@ -1,0 +1,183 @@
+{
+  "source_head": "72ad61f5f611e990e29c992ffe949aa97f53e846",
+  "source_tree": "a100b941c195e031970a5bb5d17ea4446c276c42",
+  "clean_source": true,
+  "production_build": "PASS: fresh Windows Release client/server archives, production Python API wheel, client/server native test executables, standalone EpisodeConcurrency executable",
+  "native_build_consistency": "PASS: native targets report ninja: no work to do",
+  "retained_python_backend": "PASS: 17 fresh translation-unit objects, production module, compile_commands.json, and ninja no-work check",
+  "production_python_units": {
+    "tests": 82,
+    "exit": 0,
+    "wheel_sha256": "fb32fadd9991d3fcd00a78b218d23cfb93caa8a1cbee3df18504fb5ec293bb1c"
+  },
+  "native": {
+    "targeted-episode-repeat20": {
+      "cases": 7,
+      "outcomes": {
+        "pass": 7
+      },
+      "executions": 140
+    },
+    "targeted-worker-repeat20": {
+      "cases": 8,
+      "outcomes": {
+        "pass": 8
+      },
+      "executions": 160
+    },
+    "client": {
+      "cases": 285,
+      "outcomes": {
+        "pass": 283,
+        "fail": 1,
+        "timeout": 1
+      },
+      "executions": 285
+    },
+    "server": {
+      "cases": 167,
+      "outcomes": {
+        "pass": 163,
+        "fail": 4
+      },
+      "executions": 167
+    }
+  },
+  "failures": [
+    {
+      "target": "client",
+      "test": "streaming.low_level_tcp_small_message",
+      "code": 1,
+      "status": "fail",
+      "command": [
+        "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\LibCarla\\libcarla_test_client.exe",
+        "--gtest_filter=streaming.low_level_tcp_small_message",
+        "--gtest_color=no"
+      ],
+      "cwd": "$TASK_ROOT\\Carla-critical-three-windows",
+      "repeat": 1,
+      "seconds": 2.0
+    },
+    {
+      "target": "client",
+      "test": "rpc.server_bind_sync_run_on_game_thread",
+      "status": "timeout",
+      "timeout_seconds": 45,
+      "command": [
+        "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\LibCarla\\libcarla_test_client.exe",
+        "--gtest_filter=rpc.server_bind_sync_run_on_game_thread",
+        "--gtest_color=no"
+      ],
+      "cwd": "$TASK_ROOT\\Carla-critical-three-windows",
+      "repeat": 1,
+      "seconds": 45.032
+    },
+    {
+      "target": "server",
+      "test": "streaming.low_level_tcp_small_message",
+      "code": 1,
+      "status": "fail",
+      "command": [
+        "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\LibCarla\\libcarla_test_server.exe",
+        "--gtest_filter=streaming.low_level_tcp_small_message",
+        "--gtest_color=no"
+      ],
+      "cwd": "$TASK_ROOT\\Carla-critical-three-windows",
+      "repeat": 1,
+      "seconds": 2.016
+    },
+    {
+      "target": "server",
+      "test": "benchmark_streaming.image_200x200_mt",
+      "code": 1,
+      "status": "fail",
+      "command": [
+        "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\LibCarla\\libcarla_test_server.exe",
+        "--gtest_filter=benchmark_streaming.image_200x200_mt",
+        "--gtest_color=no"
+      ],
+      "cwd": "$TASK_ROOT\\Carla-critical-three-windows",
+      "repeat": 1,
+      "seconds": 11.109
+    },
+    {
+      "target": "server",
+      "test": "benchmark_streaming.image_800x600_mt",
+      "code": 1,
+      "status": "fail",
+      "command": [
+        "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\LibCarla\\libcarla_test_server.exe",
+        "--gtest_filter=benchmark_streaming.image_800x600_mt",
+        "--gtest_color=no"
+      ],
+      "cwd": "$TASK_ROOT\\Carla-critical-three-windows",
+      "repeat": 1,
+      "seconds": 11.11
+    },
+    {
+      "target": "server",
+      "test": "benchmark_streaming.image_1920x1080_mt",
+      "code": 1,
+      "status": "fail",
+      "command": [
+        "$TASK_ROOT\\Carla-critical-three-windows\\Build\\Release\\LibCarla\\libcarla_test_server.exe",
+        "--gtest_filter=benchmark_streaming.image_1920x1080_mt",
+        "--gtest_color=no"
+      ],
+      "cwd": "$TASK_ROOT\\Carla-critical-three-windows",
+      "repeat": 1,
+      "seconds": 11.109
+    }
+  ],
+  "unchanged_limit_sources": [
+    {
+      "path": "LibCarla/source/test/client/test_rpc.cpp",
+      "base_blob": "2794dfc7739c5a0327e1059f930f38e623423044",
+      "combined_blob": "2794dfc7739c5a0327e1059f930f38e623423044",
+      "identical": true
+    },
+    {
+      "path": "LibCarla/source/test/common/test_streaming.cpp",
+      "base_blob": "817952c8fa39b90520b6765034b30961c6823c4b",
+      "combined_blob": "817952c8fa39b90520b6765034b30961c6823c4b",
+      "identical": true
+    },
+    {
+      "path": "LibCarla/source/test/server/test_benchmark_streaming.cpp",
+      "base_blob": "f5302e363db53a10293e6bc1295555695074a0c0",
+      "combined_blob": "f5302e363db53a10293e6bc1295555695074a0c0",
+      "identical": true
+    },
+    {
+      "path": "LibCarla/source/carla/trafficmanager/TrafficManagerServer.h",
+      "base_blob": "3ba2a6c3ee5faa34e0d961c7e2ff91f5a18506d9",
+      "combined_blob": "3ba2a6c3ee5faa34e0d961c7e2ff91f5a18506d9",
+      "identical": true
+    }
+  ],
+  "no_exceptions_syntax": [
+    {
+      "source": "$TASK_ROOT/Carla-critical-three-windows/LibCarla/source/carla/trafficmanager/TrafficManagerLocal.cpp",
+      "exit": 0,
+      "seconds": 10.25,
+      "syntax_only": true
+    },
+    {
+      "source": "$TASK_ROOT/Carla-critical-three-windows/LibCarla/source/test/client/test_traffic_manager_worker.cpp",
+      "exit": 0,
+      "seconds": 1.235,
+      "syntax_only": true
+    }
+  ],
+  "no_exceptions_limit": "MSVC C4530 at unchanged TrafficManagerServer.h:46: C++ exception handler used without unwind semantics. Syntax-only success does not complete a full no-exceptions build or warnings gate.",
+  "limits": [
+    "No Unreal/game server build or simulator/physics run: matching runtime and content unavailable; full engine build exceeds available disk.",
+    "No Windows sanitizer claim.",
+    "Full native suite gate fails: 5 assertions and 1 process timeout.",
+    "Actual SensorData binding fixtures are owned and reported separately by the root task."
+  ],
+  "evidence_harness_notes": [
+    "Initial 90s bound interrupted map_change_publication_races_consumers at repeat20. A corrected 240s bound completed all20 in94.968s.",
+    "Two evidence runner error logs are retained. Checkpoint/resume completed every listed client/server case. No production source changed."
+  ]
+}
