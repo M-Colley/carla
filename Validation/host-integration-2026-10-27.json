@@ -1,0 +1,186 @@
+{
+  "date": "2026-10-27",
+  "scope": "Host native libraries, full native suites and genuine freshly built Python extensions. No matching Unreal simulator was built or run.",
+  "upstream_base": "5aff00dac2de205116f070542784e8d4777676f4",
+  "previous_frozen_aggregate": "a337811178a666b5078d231de040df715976836f",
+  "production_source": "c0a7bc93493aefbca1f60f1ec20af8252a6c7f50",
+  "windows_final_test_source": "64bcef34495df4f159344a7ee859046feb9c2338",
+  "linux_final_test_source": "f0913d4865860697ffa87ca336aca2fbcfd38fbc",
+  "final_test_source_trees_identical": true,
+  "final_test_source_tree": "d8ecaa966777c32a5a177cc14f8db3922ae5bf75",
+  "production_inputs_unchanged_after_fresh_build": true,
+  "test_only_changes_since_production_build": [
+    "LibCarla/source/test/client/test_agents.cpp",
+    "LibCarla/source/test/client/test_default_signal_validity.cpp",
+    "LibCarla/source/test/client/test_polynomial_road_profiles.cpp",
+    "LibCarla/source/test/client/test_waypoint_until_lane_end.cpp",
+    "PythonAPI/test/unit/test_navigation_geometry.py"
+  ],
+  "quality_change_notes": [
+    "The intentional public native angle-interval change in PR10077 uses closed boundaries; the old open-interval assertion was updated and cardinal/outside/distance controls retained or added after independent review.",
+    "Four explicit float conversions remove new test-boundary compiler warnings.",
+    "Routing fixture waypoints provide lane and station metadata now consumed by the actual native routing code. Real sampling and existing assertions remain in use.",
+    "No additional defect roots are counted for these quality changes."
+  ],
+  "post_baseline_prs_integrated": [
+    10056,
+    10057,
+    10058,
+    10060,
+    10061,
+    10062,
+    10063,
+    10064,
+    10065,
+    10066,
+    10069,
+    10071,
+    10072,
+    10073,
+    10074,
+    10075,
+    10076,
+    10077,
+    10078,
+    10079,
+    10080,
+    10081,
+    10082,
+    10083,
+    10084,
+    10085
+  ],
+  "pr_scope_note": "These sources extend the prior frozen aggregate. Results apply to this resolved combined source, not separate full builds of every PR head. Later PRs10086 onward have separate focused validation and are absent here.",
+  "windows": {
+    "platform": "Windows 11 x64 / MSVC19.44 / CPython3.12.13",
+    "built_targets": [
+      "carla-client",
+      "carla-server",
+      "carla-python-api",
+      "libcarla_test_client",
+      "libcarla_test_server"
+    ],
+    "build_carla_unreal": false,
+    "client": {
+      "tests": 661,
+      "passed": 661,
+      "failures": 0,
+      "skipped": 0
+    },
+    "server": {
+      "tests": 275,
+      "passed": 273,
+      "failures": [
+        "benchmark_streaming.image_200x200_mt",
+        "benchmark_streaming.image_1920x1080_mt"
+      ],
+      "skipped": 0
+    },
+    "python": {
+      "tests": 406,
+      "passed": 399,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 7,
+      "skip_reason": "POSIX Bash navigation regressions"
+    },
+    "artifacts": [
+      {
+        "name": "carla-client.lib",
+        "sha256": "9daecd09c29fbe278d5df63aca6aa8ef3d2de9e610f76aa73ba1ed0e1e46a012",
+        "bytes": 165340974,
+        "build_source": "c0a7bc93493aefbca1f60f1ec20af8252a6c7f50"
+      },
+      {
+        "name": "carla-server.lib",
+        "sha256": "20a3e3748d09e331d8d9e6592283c48bce724dc048bb51a9862a1a3d1b33049d",
+        "bytes": 60377952,
+        "build_source": "c0a7bc93493aefbca1f60f1ec20af8252a6c7f50"
+      },
+      {
+        "name": "libcarla_test_client.exe",
+        "sha256": "5453cc90963c73266cb3a3d04f7221d1eb17f1b57a2ca8a5f3dee9b771dfe7ed",
+        "bytes": 4761600,
+        "build_source": "64bcef34495df4f159344a7ee859046feb9c2338"
+      },
+      {
+        "name": "libcarla_test_server.exe",
+        "sha256": "1aaa69e5fe1e2ca7b8d6f9710b683c46dd1853ff454919dafff95bdd24eecd65",
+        "bytes": 1695744,
+        "build_source": "c0a7bc93493aefbca1f60f1ec20af8252a6c7f50"
+      },
+      {
+        "name": "carla-0.10.0-cp312-cp312-win_amd64.whl",
+        "sha256": "b4a756244655a98d35f405d7b435e386607c454a7ec1db12799c3bc5a4c93c28",
+        "bytes": 1720466,
+        "build_source": "c0a7bc93493aefbca1f60f1ec20af8252a6c7f50"
+      },
+      {
+        "name": "carla.cp312-win_amd64.pyd",
+        "sha256": "db80b3de63b609366e28332fc6c108c91a79dcccc2d760f2a035180c41378d3d",
+        "bytes": 5008896,
+        "build_source": "c0a7bc93493aefbca1f60f1ec20af8252a6c7f50"
+      }
+    ],
+    "warnings": "Four contribution-added test-boundary warnings were corrected. Existing repository/dependency warnings remain; this is not a globally warning-free claim.",
+    "configure_workaround": "Both Python_EXECUTABLE and Python3_EXECUTABLE selected the same3.12 environment. This source predates PR10088, which separately corrects that discovery defect."
+  },
+  "linux": {
+    "platform": "Ubuntu24.04 x64 under real WSL2 Linux / GCC13 / CPython3.12.3",
+    "built_targets": [
+      "carla-client",
+      "carla-server",
+      "carla-python-api",
+      "libcarla_test_client",
+      "libcarla_test_server"
+    ],
+    "build_carla_unreal": false,
+    "client": {
+      "tests": 662,
+      "passed": 662,
+      "failures": 0,
+      "skipped": 0
+    },
+    "server": {
+      "tests": 275,
+      "passed": 274,
+      "failures": [
+        "benchmark_streaming.image_1920x1080_mt"
+      ],
+      "skipped": 0
+    },
+    "python": {
+      "tests": 406,
+      "passed": 405,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "skip_reason": "Windows font-registry regression"
+    },
+    "native_client_archive_sha256": "a6b40a6aefd2ca7ab7ec1d909fb7b8552d0a2ee6139f5eb904ad0bdf4d603b38",
+    "native_python_extension_sha256": "c8a83af1ceee312e39bfd0ac76e4993acb23db8e542e76a0824c03241ec07d30",
+    "packages": {
+      "numpy": "2.5.4",
+      "pygame": "2.6.1",
+      "scipy": "1.18.1",
+      "pillow": "11.3.0",
+      "moviepy": "2.2.1",
+      "natsort": "8.4.0",
+      "opencv-python-headless": "5.0.0.93",
+      "scikit-build-core": "1.1.1",
+      "mcp": "2.3.0",
+      "shapely": "2.2.0",
+      "networkx": "3.7"
+    }
+  },
+  "known_failures": "The listed native server throughput assertions remain failing. They were observed previously; no claim that they are fixed, merely flaky or caused by load is made.",
+  "abi": "Both platforms rebuilt client/server libraries and the actual Python extension coherently with the new polynomial representation in PR10085. No old-header/new-library or old-wheel ABI mixture was used.",
+  "unrun": [
+    "Unreal5.8 bundled compiler and simulator build/runtime",
+    "live smoke suite on port3654",
+    "live sensor/map/navigation/render operation",
+    "GPU, middleware, ROS2 and packaged-server integration",
+    "successful upstream hosted CI"
+  ],
+  "goal": "The additional150-root task remains active; this aggregate validation is an intermediate result."
+}
