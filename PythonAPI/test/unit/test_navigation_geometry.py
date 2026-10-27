@@ -78,13 +78,15 @@ class TestTurnDecisionGeometry(unittest.TestCase):
         return planner
 
     def add_loose_end(self, planner):
+        lane = types.SimpleNamespace(
+            s_start=0.0, length=1.0, is_positive_direction=True)
         tail = types.SimpleNamespace(
-            road_id=99, section_id=0, lane_id=-1,
+            road_id=99, section_id=0, lane_id=-1, s=1.0,
             transform=types.SimpleNamespace(location=_Vector(1.0, 1.0, 0.0)),
             next=lambda distance: [])
         exit_waypoint = types.SimpleNamespace(
-            road_id=99, section_id=0, lane_id=-1, is_junction=True,
-            next=lambda distance: [tail])
+            road_id=99, section_id=0, lane_id=-1, is_junction=True, s=0.0,
+            get_lane=lambda: lane, next=lambda distance: [tail])
         planner._topology = [{"exit": exit_waypoint, "exitxyz": (1.0, 0.0, 0.0)}]
         planner._id_map = {(1.0, 0.0, 0.0): 1}
         planner._road_id_to_edge = {}
