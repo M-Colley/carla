@@ -27,8 +27,9 @@ from agents.navigation.constant_velocity_agent import ConstantVelocityAgent
 from agents.navigation.local_planner import LocalPlanner, RoadOption
 
 
-def _initialize_base(agent, vehicle, *_args, **_kwargs):
+def _initialize_base(agent, vehicle, target_speed, *_args, **_kwargs):
     agent._vehicle = vehicle
+    agent._local_planner = SimpleNamespace(get_target_speed=lambda: target_speed)
 
 
 class TestPythonAgentRegressions(unittest.TestCase):
