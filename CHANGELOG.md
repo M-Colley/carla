@@ -252,6 +252,7 @@
 * Fixed invalid catalog contents leaving previously copied catalogs unregistered after a failed content-pack add.
 * Added `xdg-utils` to Ubuntu build prerequisites so Unreal Engine setup can register its file types with `xdg-mime` (#9457).
 * Reported the prerequisite installer exit code before Windows setup stops after a failed prerequisite step (#8697).
+* Fixed the Node AgenticTools stdio server truncating pending responses when a client closes its input on Linux.
 * Fixed `carla-pack add` dropping existing OpenDRIVE, traffic-light phase, navigation and Traffic Manager sidecars when re-adding an in-pack map without sidecar flags (#9987).
 * Fixed Windows setup reusing an engine checkout without passing its path to CMake, skipping a missing content checkout after an interrupted download, and parsing Python installation paths containing spaces.
 * Fixed Python API wheel builds from source and build directories containing spaces, and rejected the unsupported setuptools-only backend instead of producing a wheel without the native client.
